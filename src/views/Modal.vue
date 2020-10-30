@@ -1,5 +1,6 @@
 <template>
-  <div class="home">
+  <div class="modal-component">
+    <h1>This is the modal page</h1>
     <button @click="toggleModal">Open</button>
     <transition name="fade">
       <div v-if="isOpen" class="modal">
@@ -11,6 +12,7 @@
 
 <script>
 export default {
+  name: "Modal",
   data() {
     return {
       isOpen: false,
@@ -24,14 +26,4 @@ export default {
 };
 </script>
 
-<style>
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 1s ease-out;
-}
-</style>
+<style></style>
