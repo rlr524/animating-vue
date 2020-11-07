@@ -22,5 +22,11 @@ export default new Router({
       component: () =>
         import(/* webpackChunkName: "about" */ "./views/About.vue"),
     },
+    {
+      path: "/drawer",
+      name: "drawer",
+      component: () =>
+        import(/* webpackChunkName: "drawer" */ "./views/Drawer.vue"),
+    },
   ],
 });
