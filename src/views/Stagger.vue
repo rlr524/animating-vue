@@ -1,39 +1,39 @@
 <template>
-    <div id="container">
-        <div v-for="card in cards" :key="card.id" class="card"></div>
-    </div>
+  <div id="container">
+    <div v-for="card in cards" :key="card.id" class="card">{{ card.id }}</div>
+  </div>
 </template>
 
 <script>
 import gsap from "gsap";
 export default {
-    data: function() {
-        return {
-            cards: [
-                {id: 1298},
-                {id: 8748},
-                {id: 4919},
-                {id: 5527},
-                {id: 9428},
-                {id: 7103},
-            ]
-        }
-    },
-    mounted() {
-        gsap.from(".card", {
-            duration: 0.5,
-            opacity: 0,
-            scale: 0,
-            y: 200,
-            ease: "power1",
-            stagger: {
-                from: "edges",
-                each: 0.5,
-                // Could also stagger from the center for the o
-            }
-        })
-    }
-}
+  data: function () {
+    return {
+      cards: [
+        { id: 1298 },
+        { id: 8748 },
+        { id: 4919 },
+        { id: 5527 },
+        { id: 9428 },
+        { id: 7103 },
+      ],
+    };
+  },
+  mounted() {
+    gsap.from(".card", {
+      duration: 0.5,
+      opacity: 0,
+      scale: 0,
+      y: 200,
+      ease: "power1",
+      stagger: {
+        from: "edges",
+        each: 0.5,
+        // Could also stagger from the center for the o
+      },
+    });
+  },
+};
 </script>
 
 <style scoped>

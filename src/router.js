@@ -11,7 +11,7 @@ export default new Router({
     {
       path: "/",
       name: "modal",
-      component: Modal,
+      component: Modal
     },
     {
       path: "/about",
@@ -20,25 +20,31 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue"),
+        import(/* webpackChunkName: "about" */ "./views/About.vue")
     },
     {
       path: "/drawer",
       name: "drawer",
       component: () =>
-        import(/* webpackChunkName: "drawer" */ "./views/Drawer.vue"),
+        import(/* webpackChunkName: "drawer" */ "./views/Drawer.vue")
     },
     {
       path: "/simple",
       name: "simple",
       component: () =>
-        import(/* webpackChunkName: "simple" */ "./views/Simple.vue"),
+        import(/* webpackChunkName: "simple" */ "./views/Simple.vue")
     },
     {
       path: "/stagger",
       name: "stagger",
       component: () =>
-        import(/* webpackChunkName: "stagger" */ "./views/Stagger.vue"),
+        import(/* webpackChunkName: "stagger" */ "./views/Stagger.vue")
     },
-  ],
+    {
+      path: "/cards",
+      name: "cards",
+      component: () =>
+        import(/* webpackChunkName: "cards" */ "./views/Cards.vue")
+    }
+  ]
 });

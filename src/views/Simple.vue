@@ -1,4 +1,6 @@
 <template>
+  <!-- Remember that appear causes the transition to happen upon the initial render of the component;
+we're using js lifecycle hooks not css animations so we're passing in methods using the js lifecycles-->
   <transition appear @before-enter="beforeEnter" @enter="enter" :css="false">
     <div class="card"></div>
   </transition>
@@ -6,22 +8,23 @@
 
 <script>
 import gsap from "gsap";
+
 export default {
-    methods: {
-        beforeEnter(el) {
-          el.style.opacity = 0;
-          el.style.transform = "scale(0,0)";
-        },
-        enter(el, done) {
-          gsap.to(el, {
-            duration: 2,
-            opacity: 1,
-            scale: 1,
-            ease: "bounce.out",
-            onComplete: done,
-          })
-        }
+  methods: {
+    beforeEnter(el) {
+      el.style.opacity = 0;
+      el.style.transform = "scale(0,0)";
     },
+    enter(el, done) {
+      gsap.to(el, {
+        duration: 1,
+        opacity: 1,
+        scale: 1,
+        ease: "bounce",
+        onComplete: done,
+      });
+    },
+  },
 };
 </script>
 

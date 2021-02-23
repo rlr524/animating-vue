@@ -20,6 +20,7 @@
 </template>
 
 <script>
+// velocity.js
 import Velocity from "velocity-animate";
 
 export default {
@@ -34,6 +35,10 @@ export default {
       el.style.opacity = 0;
       el.style.width = "0em";
     },
+    // We're using an easing spring option from velocity on the enter method
+    // 60 is the tension and 10 is the friction; a higher tension (default is 500) increases speed and bounciness
+    // a lower friction (default is 20) increases ending vibration speed
+    // On the leave method, we're using a standard easeInCubic easing (adopted from jQuery)
     enter: function (el, done) {
       Velocity(
         el,
