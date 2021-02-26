@@ -17,10 +17,10 @@ export default {
     },
     enter(el, done) {
       gsap.to(el, {
-        duration: 1,
+        duration: 2.5,
         opacity: 1,
         scale: 1,
-        ease: "bounce",
+        ease: "bounce.out",
         onComplete: done,
       });
     },

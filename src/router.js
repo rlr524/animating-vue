@@ -45,6 +45,21 @@ export default new Router({
       name: "cards",
       component: () =>
         import(/* webpackChunkName: "cards" */ "./views/Cards.vue")
+    },
+    {
+      path: "/state",
+      name: "state",
+      component: () => import("./views/State.vue")
+    },
+    {
+      path: "/timeline",
+      name: "timeline",
+      component: () => import("./views/Timeline.vue")
+    },
+    {
+      path: "/master",
+      name: "master",
+      component: () => import("./views/Master.vue")
     }
   ]
 });
